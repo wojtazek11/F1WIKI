@@ -1,1 +1,3 @@
-# F1WIKI-test
+# F1WIKI
+
+Zadanie praktyki strona w tematyce Formuły 1

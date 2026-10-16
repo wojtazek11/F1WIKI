@@ -874,7 +874,7 @@ details[open] .tresc-artykulu {
     background-color: #111;
     color: #fff;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 0px;
     border-bottom: 4px solid #e10600;
     font-family: sans-serif;
 }
@@ -890,7 +890,7 @@ details[open] .tresc-artykulu {
 .autorzy-lista {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;          /* na telefonie nazwiska przechodza do nowej linijki */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
 }
