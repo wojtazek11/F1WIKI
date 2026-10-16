@@ -944,3 +944,48 @@ body:has(#ai-chat-container) {
         transition: none !important;
     }
 }
+
+
+/* ---------- Kafelek z autorami (na dole strony) ---------- */
+.autorzy {
+    width: 100%;
+    max-width: 400px;
+    margin: 30px auto 10px;
+    padding: 18px 20px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    border-bottom: 4px solid #e10600;
+    font-family: sans-serif;
+}
+
+.autorzy-tytul {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.autorzy-lista {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;          /* na telefonie nazwiska same przejdą do nowej linii */
+    justify-content: center;
+    gap: 8px;
+}
+
+.autorzy-lista li {
+    background-color: #222;
+    padding: 6px 12px;
+    border-left: 3px solid #e10600;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.autorzy-stopka {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: #ccc;
+}
