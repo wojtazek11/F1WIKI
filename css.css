@@ -1,16 +1,3 @@
-/* =====================================================================
-   F1 WIKI – wspólny arkusz stylów dla wszystkich podstron
-
-   Strona jest responsywna – sama dopasowuje się do komputerów,
-   tabletów i telefonów. Wersje dla mniejszych ekranów (media queries)
-   są zebrane na końcu pliku:
-     • do 1100px – mniejsze laptopy i tablety poziomo
-     • do 900px  – tablety pionowo
-     • do 700px  – telefony (menu chowa się pod przyciskiem ☰)
-     • do 420px  – małe telefony
-   ===================================================================== */
-
-
 /* ---------- Ustawienia ogólne ---------- */
 * {
     box-sizing: border-box;
