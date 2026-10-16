@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 WIKI</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="icon" type="image/png" href="W.jpg">
+    <script src="menu.js"></script>
+</head>
+<body>
+
+    <section>
+        <a href="index.html" class="logo"><img src="logo_f1_wiki.png" alt="F1 WIKI"></a>
+        <!-- przycisk menu (widoczny tylko na telefonach) -->
+        <button class="menu-przycisk" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="menu">
+            <span></span><span></span><span></span>
+        </button>
+    </section>
+
+    <aside id="menu">
+        <a href="kalendarz.html" class="link aktywny" aria-current="page">Kalendarz</a>
+        <a href="tabela.html" class="link">Tabela</a>
+        <a href="aktualnosci.html" class="link">Aktualności</a>
+        <a href="blog.html" class="link">Blog</a>
+    </aside>
+<hr>
+    <marquee class="bolid2" scrollamount="20" loop="infinite">
+        <img src="bolid.png" class="bolid" alt="">
+        Witamy w Kalendarzu!
+        <img src="bolid.png" class="bolid" alt="">
+    </marquee>
+    <hr>
+
+    <main class="kalendarz-siatka">
+        <!-- legenda na górze, żeby na telefonie była widoczna od razu -->
+        <table class="legenda">
+            <tr>
+                <td colspan="2"><b>LEGENDA KOLORÓW</b></td>
+            </tr>
+            <tr>
+                <td class="tren"></td><td>Trening do wyścigu</td>
+            </tr>
+            <tr>
+                <td class="kwal"></td><td>Kwalifikacje do wyścigu</td>
+            </tr>
+            <tr>
+                <td class="wysc"></td><td>WYŚCIG</td>
+            </tr>
+        </table>
+
+        <table class="kal-1">
+            <tr>
+                <td colspan="7" class="kal-mie"><b>Październik</b></td>
+            </tr>
+
+            <tr>
+                <td>Pon</td><td>Wt</td><td>Śr</td><td>Czw</td><td>Pt</td><td>Sb</td><td>Ndz</td>
+            </tr>
+
+            <tr>
+                <td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td>
+            </tr>
+            
+            <tr>
+                <td>5</td><td>6</td><td>7</td><td>8</td><td class="tren">9</td><td class="kwal">10</td><td class="wysc">11</td>
+            </tr>
+
+            <tr>
+                <td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td>
+            </tr>
+
+            <tr>
+                <td>19</td><td>20</td><td>21</td><td>22</td><td class="tren">23</td><td class="kwal">24</td><td class="wysc">25</td>
+            </tr>
+
+            <tr>
+                <td>26</td><td>27</td><td>28</td><td >29</td><td class="tren">30</td><td class="kwal">31</td><td></td>
+            </tr>
+        </table>
+        
+        <table class="kal-1">
+            <tr>
+                <td colspan="7" class="kal-mie"><b>Listopad</b></td>
+            </tr>
+
+            <tr>
+                <td >Pon</td><td>Wt</td><td>Śr</td><td>Czw</td><td>Pt</td><td>Sb</td><td>Ndz</td>
+            </tr>
+
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td class="wysc">1</td>
+            </tr>
+            
+            <tr>
+                <td>2</td><td>3</td><td>4</td><td>5</td><td class="tren">6</td><td class="kwal">7</td><td class="wysc">8</td>
+            </tr>
+
+            <tr>
+                <td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+            </tr>
+
+            <tr>
+                <td>16</td><td>17</td><td>18</td><td class="tren">19</td><td class="kwal">20</td><td class="wysc">21</td><td >22</td>
+            </tr>
+
+            <tr>
+                <td>23</td><td>24</td><td>25</td><td>26</td><td class="tren">27</td><td class="kwal">28</td><td class="wysc">29</td>
+            </tr>
+
+            <tr>
+                <td>30</td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>
+
+        <table class="kal-1">
+            <tr>
+                <td colspan="7" class="kal-mie"><b>Grudzień</b></td>
+            </tr>
+
+            <tr>
+                <td>Pon</td><td>Wt</td><td>Śr</td><td>Czw</td><td>Pt</td><td>Sb</td><td>Ndz</td>
+            </tr>
+
+            <tr>
+                <td></td><td>1</td><td>2</td><td>3</td><td class="tren">4</td><td class="kwal">5</td><td class="wysc">6</td>
+            </tr>
+            
+            <tr>
+                <td>7</td><td>8</td><td>9</td><td>10</td><td >11</td><td >12</td><td>13</td>
+            </tr>
+
+            <tr>
+                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+            </tr>
+
+            <tr>
+                <td>21</td><td>22</td><td>23</td><td>24</td><td >25</td><td >26</td><td >27</td>
+            </tr>
+
+            <tr>
+                <td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td>
+            </tr>
+        </table>
+    </main>
+
+    <article>
+
+    </article>
+    
+</body>
+</html>

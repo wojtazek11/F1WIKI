@@ -1,0 +1,959 @@
+/* =====================================================================
+   F1 WIKI – wspólny arkusz stylów dla wszystkich podstron
+
+   Strona jest responsywna – sama dopasowuje się do komputerów,
+   tabletów i telefonów. Wersje dla mniejszych ekranów (media queries)
+   są zebrane na końcu pliku:
+     • do 1100px – mniejsze laptopy i tablety poziomo
+     • do 900px  – tablety pionowo
+     • do 700px  – telefony (menu chowa się pod przyciskiem ☰)
+     • do 420px  – małe telefony
+   ===================================================================== */
+
+
+/* ---------- Ustawienia ogólne ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;   /* telefon nie powiększa sam tekstu po obróceniu ekranu */
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1640px;                /* na bardzo szerokich monitorach strona nie rozjeżdża się */
+    margin: 0 auto;
+    padding: 20px;
+
+    /* Układ strony: logo (section) i menu (aside) obok siebie,
+       a wszystko pod nimi (hr, pasek z bolidem, main, article) na całą szerokość */
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 20px;
+    align-content: start;
+}
+
+body > * {
+    grid-column: 1 / -1;
+    min-width: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+a:hover {
+    color: black;
+}
+
+hr {
+    height: 5px;
+    background-color: black;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+}
+
+
+/* ---------- Nagłówek: logo (section) + menu (aside) ---------- */
+body > section {
+    grid-column: 1;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 5px 0 25px;
+}
+
+.logo {
+    display: block;
+}
+
+.logo img {
+    display: block;
+    width: clamp(150px, 30vw, 430px);
+    height: auto;
+}
+
+body > aside {
+    grid-column: 2;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5px 0 25px;
+    font-weight: bolder;
+    font-size: clamp(1.1rem, 3vw, 2.75rem);
+    letter-spacing: 1px;
+}
+
+.link {
+    padding: 0.3em 0.45em;
+    color: red;
+    font-style: italic;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+/* podstrona, na której aktualnie jesteśmy */
+.link.aktywny {
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.2em;
+}
+
+/* przycisk menu ☰ – pokazuje się tylko na telefonach */
+.menu-przycisk {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-przycisk span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: red;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+/* po otwarciu menu trzy kreski zamieniają się w X */
+.menu-przycisk.otwarte span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-przycisk.otwarte span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-przycisk.otwarte span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.menu-przycisk:focus-visible {
+    outline: 3px solid black;
+    outline-offset: 2px;
+}
+
+@media (hover: hover) {
+    .menu-przycisk:hover span {
+        background-color: black;
+    }
+}
+
+
+/* ---------- Pasek z jadącym bolidem ---------- */
+marquee {
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-weight: bolder;
+    font-style: italic;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.bolid2 {
+    color: red;
+}
+
+.bolid {
+    height: 0.9em;           /* bolid rośnie i maleje razem z napisem */
+    width: auto;
+    max-width: none;
+    vertical-align: middle;
+}
+
+
+/* ---------- Licznik do najbliższego Grand Prix (strona główna) ---------- */
+.timer-container {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 4px solid #e10600;
+    font-family: sans-serif;
+}
+
+.timer-container h2 {
+    margin-bottom: 15px;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+#countdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.time-box {
+    background-color: #222;
+    padding: 10px 15px;
+    border-radius: 5px;
+    min-width: 60px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e10600;
+}
+
+.time-box p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+
+/* ---------- Tabele wyników i klasyfikacji (strona główna i „Tabela”) ---------- */
+.h1-wyniki {
+    margin: 12px 0;
+}
+
+.f1-table-container {
+    width: 100%;
+    max-width: 910px;
+    margin: 0 auto 20px;
+    overflow-x: auto;        /* gdyby tabela się nie mieściła, przewija się tylko ona, a nie cała strona */
+}
+
+.f1-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background-color: #1f1f27;
+    color: white;
+}
+
+.f1-table th {
+    background-color: #e10600;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.f1-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #2d2d38;
+}
+
+.f1-table tr:hover {
+    background-color: #2a2a35;
+}
+
+/* Akcenty dla podium i strefy punktowej */
+.f1-table tr.p1 { background-color: rgba(255, 215, 0, 0.15); font-weight: bold; }
+.f1-table tr.p2 { background-color: rgba(192, 192, 192, 0.12); }
+.f1-table tr.p3 { background-color: rgba(205, 127, 50, 0.12); }
+.f1-table tr.points { background-color: rgba(0, 200, 83, 0.05); }
+.f1-table tr.dnf { background-color: rgba(225, 6, 0, 0.15); color: #ff8a80; }
+
+.pos { font-weight: bold; width: 40px; text-align: center; }
+.pts { font-weight: bold; color: #ffeb3b; text-align: right; }
+
+/* długi / krótki nagłówek kolumny (krótki pokazuje się na telefonie) */
+.tekst-krotki {
+    display: none;
+}
+
+
+/* ---------- Kalendarz ---------- */
+.kalendarz-siatka {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));   /* 3 miesiące obok siebie */
+    gap: 32px;
+    align-items: start;
+    width: 100%;
+    max-width: 1400px;
+    margin: 25px auto;
+}
+
+.legenda {
+    grid-column: 1 / -1;
+    justify-self: center;
+    border-spacing: 3px;
+}
+
+.legenda td {
+    padding: 2px 6px;
+}
+
+.legenda .tren,
+.legenda .kwal,
+.legenda .wysc {
+    width: 40px;
+}
+
+.kal-1 {
+    width: 100%;
+    table-layout: fixed;     /* wszystkie dni tygodnia mają równą szerokość */
+    text-align: center;
+    border-collapse: collapse;
+    border: 4px solid black;
+}
+
+.kal-1 td {
+    border: 4px solid black;
+    padding: 8px 2px;
+}
+
+.wysc {
+    background-color: red;
+}
+
+.kwal {
+    background-color: yellow;
+}
+
+.tren {
+    background-color: lightblue;
+}
+
+.kal-mie {
+    background-color: crimson;
+}
+
+
+/* ---------- Aktualności ---------- */
+.beton {
+    color: rgb(220, 65, 91);
+    text-align: center;
+    padding-top: 15px;
+}
+
+.bariera {
+    display: inline-block;
+    max-width: 100%;
+    border: 4px solid black;
+    padding: 10px;
+    font-size: clamp(1rem, 2.4vw, 1.5rem);
+}
+
+/* rozwijane artykuły */
+.artykul-kontener {
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+}
+
+/* Styl nagłówka (tytułu) */
+summary {
+    position: relative;
+    padding: 20px 55px 20px 20px;
+    font-size: clamp(1.05rem, 2.5vw, 1.4rem);
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;                 /* Ukrywa domyślny trójkącik */
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+summary::-webkit-details-marker {
+    display: none;                    /* to samo dla Safari (iPhone) */
+}
+
+/* Efekt najechania myszką na tytuł */
+summary:hover {
+    background-color: #f0f0f0;
+}
+
+/* Własny wskaźnik plus/minus */
+summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    content: '−';
+}
+
+/* Animacja płynnego odsłaniania tekstu */
+.tresc-artykulu {
+    padding: 0 20px 20px 20px;
+    line-height: 1.6;
+    color: #333333;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+details[open] .tresc-artykulu {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+/* Wrapper wewnątrz grida, niezbędny do poprawnego działania animacji wysokości */
+.tresc-wewnetrzna {
+    overflow: hidden;
+}
+
+.tresc-wewnetrzna p {
+    margin-top: 0.8em;
+}
+
+/* zdjęcie w artykule */
+.toor {
+    float: right;
+    height: 250px;
+    max-width: 45%;
+    object-fit: contain;
+    margin: 0.8em 0 10px 15px;
+}
+
+
+/* ---------- Blog – lista wpisów (zdjęcie zmienia się po najechaniu myszką) ---------- */
+.blog-karta {
+    display: flex;
+    max-width: 800px;
+    min-height: 200px;
+    margin: 20px auto;
+    border: 4px dashed black;
+    background-color: #fff;
+    color: #111;
+    text-decoration: none;
+}
+
+.zmieniajacy-obrazek,
+.mercedes,
+.ferrari,
+.redbull {
+    flex: 0 0 300px;
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease-in-out;
+}
+
+.zmieniajacy-obrazek {
+    background-image: url('mclaren.jpg');
+}
+
+.zmieniajacy-obrazek:hover,
+.blog-karta:hover .zmieniajacy-obrazek,
+.blog-karta:focus-visible .zmieniajacy-obrazek {
+    background-image: url('kierowcy\ mclaren.jpg');
+}
+
+.mercedes {
+    background-image: url('mercedes.jpg');
+}
+
+.mercedes:hover,
+.blog-karta:hover .mercedes,
+.blog-karta:focus-visible .mercedes {
+    background-image: url('kimi.jpg');
+}
+
+.ferrari {
+    background-image: url('feerraarrii.jpg');
+}
+
+.ferrari:hover,
+.blog-karta:hover .ferrari,
+.blog-karta:focus-visible .ferrari {
+    background-image: url('hamilton.jpg');
+}
+
+.redbull {
+    background-image: url('red\ bull.jpg');
+}
+
+.redbull:hover,
+.blog-karta:hover .redbull,
+.blog-karta:focus-visible .redbull {
+    background-image: url('max.jpg');
+}
+
+.tekst-do-obrazka {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+}
+
+.teksdo {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    font-weight: bolder;
+    transition: color 0.2s;
+}
+
+.blog-karta:hover .teksdo {
+    color: red;
+}
+
+
+/* ---------- Wpis: Lando Norris ---------- */
+.h1-norris {
+    max-width: 900px;
+    margin: 20px auto 15px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.p-norris {
+    max-width: 820px;
+    margin: 0 auto 1em;
+    text-align: center;
+    font-size: 130%;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1.45;
+}
+
+/* miejsce na dole, żeby okrągły przycisk czatu nie zasłaniał tekstu */
+body:has(#ai-chat-container) {
+    padding-bottom: 100px;
+}
+
+
+/* ---------- Wpis: Kimi Antonelli (zdjęcie | tekst | zdjęcie) ---------- */
+.kontener-glowny {
+    display: flex;
+    width: 100%;
+}
+
+/* Boczne zdjęcia */
+.zdjecie-boczne {
+    display: block;
+    width: 20%;
+    height: auto;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Środkowa sekcja z treścią */
+.sekcja-tresci {
+    width: 60%;
+    background-color: #c0392b;
+    color: #ffffff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tytul-bloga {
+    font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+    font-weight: bold;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.tekst-bloga {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+.tekst-bloga p + p {
+    margin-top: 1em;
+}
+
+
+/* ---------- Pozostałe klasy (obecnie nieużywane w HTML – zostawione na przyszłość) ---------- */
+.naprawo {
+    float: right;
+}
+
+.blogkolor {
+    background-color: #d2131fbb;
+    clear: both;
+    height: 70%;
+}
+
+.kimixxx {
+    height: 200px;
+    clear: both;
+    float: left;
+}
+
+.kimixxx2 {
+    float: right;
+    height: 200px;
+}
+
+.strona-glowna {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.menu-gorne {
+    background-color: #ffffff;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    flex-shrink: 0;
+}
+
+.logo-tekst {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff1801;
+    font-style: italic;
+}
+
+.menu-linki {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-linki a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 25px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.menu-linki a:hover,
+.menu-linki a.aktywny {
+    color: #ff1801;
+}
+
+
+/* =====================================================================
+   WERSJE DLA MNIEJSZYCH EKRANÓW
+   ===================================================================== */
+
+/* ---------- Mniejsze laptopy i tablety poziomo (do 1100px) ---------- */
+@media (max-width: 1100px) {
+    /* kalendarz: 2 miesiące w rzędzie */
+    .kalendarz-siatka {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* ostatni miesiąc, jeśli został sam w rzędzie – na środek */
+    .kalendarz-siatka .kal-1:last-child:nth-child(even) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 16px);
+    }
+}
+
+
+/* ---------- Tablety pionowo (do 900px) ---------- */
+@media (max-width: 900px) {
+    /* wpis o Kimim: oba zdjęcia obok siebie na górze, tekst pod nimi */
+    .kontener-glowny {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "lewe  prawe"
+            "tekst tekst";
+    }
+
+    .kontener-glowny .zdjecie-boczne:first-child {
+        grid-area: lewe;
+    }
+
+    .kontener-glowny .zdjecie-boczne:last-child {
+        grid-area: prawe;
+    }
+
+    .zdjecie-boczne {
+        width: 100%;
+        height: clamp(200px, 48vw, 400px);
+    }
+
+    .sekcja-tresci {
+        grid-area: tekst;
+        width: auto;
+        padding: 30px 24px;
+    }
+
+    .p-norris {
+        font-size: 115%;
+    }
+}
+
+
+/* ---------- Telefony (do 700px) ---------- */
+@media (max-width: 700px) {
+    body {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 10px 12px;
+    }
+
+    /* nagłówek: logo po lewej, przycisk ☰ po prawej, menu pod spodem */
+    body > section,
+    body > aside {
+        grid-column: 1;
+    }
+
+    body > section {
+        margin: 0 0 10px;
+    }
+
+    .logo img {
+        width: min(58vw, 230px);
+    }
+
+    html.js .menu-przycisk {
+        display: flex;
+    }
+
+    /* menu: linki jeden pod drugim, duże i wygodne do kliknięcia palcem */
+    body > aside {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        margin: 0 0 12px;
+        font-size: 1.45rem;
+        letter-spacing: 0.5px;
+    }
+
+    .link {
+        padding: 12px 10px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .link:first-child {
+        border-top: 1px solid #e6e6e6;
+    }
+
+    .link.aktywny {
+        text-decoration: none;
+        background-color: #fff0f0;
+        border-left: 5px solid red;
+    }
+
+    /* gdy działa JavaScript, menu jest schowane, dopóki nie klikniemy ☰ */
+    html.js body > aside {
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        margin-bottom: 0;
+        transition: max-height 0.35s ease, margin-bottom 0.35s ease, visibility 0s linear 0.35s;
+    }
+
+    html.js body > aside.otwarte {
+        max-height: 25rem;
+        visibility: visible;
+        margin-bottom: 12px;
+        transition: max-height 0.35s ease, margin-bottom 0.35s ease, visibility 0s;
+    }
+
+    marquee {
+        letter-spacing: 1px;
+    }
+
+    /* licznik: 4 okienka zawsze w jednym rzędzie */
+    .timer-container {
+        padding: 15px 10px;
+    }
+
+    #countdown {
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+
+    .time-box {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 90px;
+        padding: 8px 4px;
+    }
+
+    .time-box span {
+        font-size: 1.6rem;
+    }
+
+    /* tabele wyników – ciaśniej, żeby zmieściły się na ekranie */
+    .f1-table {
+        font-size: 12px;
+    }
+
+    .f1-table th {
+        padding: 8px 6px;
+        font-size: 11px;
+        letter-spacing: 0;
+    }
+
+    .f1-table td {
+        padding: 7px 6px;
+    }
+
+    .pos {
+        width: 34px;
+    }
+
+    .tekst-pelny {
+        display: none;
+    }
+
+    .tekst-krotki {
+        display: inline;
+    }
+
+    /* kalendarz: jeden miesiąc pod drugim */
+    .kalendarz-siatka {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 460px;
+        gap: 22px;
+        margin-top: 15px;
+    }
+
+    .kalendarz-siatka .kal-1:last-child:nth-child(even) {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    /* aktualności */
+    .beton {
+        padding-top: 12px;
+    }
+
+    .artykul-kontener {
+        margin: 14px auto;
+    }
+
+    summary {
+        padding: 16px 46px 16px 16px;
+    }
+
+    summary::after {
+        right: 16px;
+    }
+
+    .tresc-artykulu {
+        padding: 0 16px 16px;
+    }
+
+    .toor {
+        float: none;
+        display: block;
+        height: auto;
+        max-height: 260px;
+        max-width: 100%;
+        margin: 12px auto 4px;
+    }
+
+    /* blog: zdjęcie nad tytułem wpisu */
+    .blog-karta {
+        flex-direction: column;
+        min-height: 0;
+        margin: 15px auto;
+    }
+
+    .zmieniajacy-obrazek,
+    .mercedes,
+    .ferrari,
+    .redbull {
+        flex: none;
+        width: 100%;
+        min-height: 0;
+        aspect-ratio: 3 / 2;
+    }
+
+    .tekst-do-obrazka {
+        padding: 12px 14px 14px;
+    }
+
+    .teksdo {
+        font-size: 1rem;
+    }
+
+    /* wpis o Norrisie */
+    .h1-norris {
+        margin: 15px auto 12px;
+        letter-spacing: 0.5px;
+    }
+
+    .p-norris {
+        font-size: 1.05rem;
+        text-align: left;
+    }
+
+    /* wpis o Kimim */
+    .sekcja-tresci {
+        padding: 24px 16px;
+    }
+
+    .tekst-bloga {
+        text-align: left;
+    }
+}
+
+
+/* ---------- Małe telefony (do 420px) ---------- */
+@media (max-width: 420px) {
+    body {
+        padding: 8px 10px;
+    }
+
+    .kal-1,
+    .kal-1 td {
+        border-width: 3px;
+    }
+
+    .kal-1 td {
+        padding: 7px 1px;
+        font-size: 14px;
+    }
+
+    .f1-table th,
+    .f1-table td {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .time-box span {
+        font-size: 1.35rem;
+    }
+}
+
+
+/* ---------- Osoby, które wyłączyły animacje w systemie ---------- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

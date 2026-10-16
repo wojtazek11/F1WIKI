@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 WIKI</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="icon" type="image/png" href="W.jpg">
+    <script src="menu.js"></script>
+</head>
+<body>
+
+    <section>
+        <a href="index.html" class="logo"><img src="logo_f1_wiki.png" alt="F1 WIKI"></a>
+        <!-- przycisk menu (widoczny tylko na telefonach) -->
+        <button class="menu-przycisk" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="menu">
+            <span></span><span></span><span></span>
+        </button>
+    </section>
+
+    <aside id="menu">
+        <a href="kalendarz.html" class="link">Kalendarz</a>
+        <a href="tabela.html" class="link aktywny" aria-current="page">Tabela</a>
+        <a href="aktualnosci.html" class="link">Aktualności</a>
+        <a href="blog.html" class="link">Blog</a>
+    </aside>
+<hr>
+    <marquee class="bolid2" scrollamount="20" loop="infinite">
+        <img src="bolid.png" class="bolid" alt="">
+        Witamy w Tabeli!
+        <img src="bolid.png" class="bolid" alt="">
+    </marquee>
+    <hr>
+
+    <main>
+        
+        <h1 class="h1-wyniki" style="text-align: center;">Klasyfikacja Generalna Kierwoców</h1>
+        
+         <div class="f1-table-container">
+        <table class="f1-table">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Poz</th>
+                    <th>Kierowca</th>
+                    <th>Zespół</th>
+                    <th style="text-align: center;"><span class="tekst-pelny">Pozycja oraz punkty w poprzednim sezonie</span><span class="tekst-krotki">Sezon 2025 (poz./pkt)</span></th>
+                    <th style="text-align: right;">Pkt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="p1">
+                    <td class="pos">1</td>
+                    <td>Kimi Antonelli</td>
+                    <td>Mercedes</td>
+                    <td style="text-align: center;">7/150</td>
+                    <td class="pts">320</td>
+                </tr>
+                <tr class="p2">
+                    <td class="pos">2</td>
+                    <td>George Russell</td>
+                    <td>Mercedes</td>
+                    <td style="text-align: center;">4/319</td>
+                    <td class="pts">236</td>
+                </tr>
+                <tr class="p3">
+                    <td class="pos">3</td>
+                    <td>Lewis Hamilton</td>
+                    <td>Ferrari</td>
+                    <td style="text-align: center;">6/156</td>
+                    <td class="pts">214</td>
+                </tr>
+                <tr class="points">
+                    <td class="pos">4</td>
+                    <td>Charles Leclerc</td>
+                    <td>Ferrari</td>
+                    <td style="text-align: center;">5/242</td>
+                    <td class="pts">191</td>
+                </tr>
+                <tr class="points">
+                    <td class="pos">5</td>
+                    <td>Lando Norris</td>
+                    <td>McLaren</td>
+                    <td style="text-align: center;">1/423</td>
+                    <td class="pts">188</td>
+                </tr>
+                <tr class="points">
+                    <td class="pos">6</td>
+                    <td>Max Verstappen</td>
+                    <td>Racing Bull racing</td>
+                    <td style="text-align: center;">2/421</td>
+                    <td class="pts">188</td>
+                </tr>
+                <tr class="points">
+                    <td class="pos">7</td>
+                    <td>Oscar Piastri</td>
+                    <td>McLaren</td>
+                    <td style="text-align: center;">3/410</td>
+                    <td class="pts">128</td>
+                </tr>
+                <tr class="points">
+                    <td class="pos">8</td>
+                    <td>Isack Hadjar</td>
+                    <td>Racing Bull racing</td>
+                    <td style="text-align: center;">12/51</td>
+                    <td class="pts">96</td>
+                </tr>
+                <tr class="points">
+                    <td class="pos">9</td>
+                    <td>Liam Lawson</td>
+                    <td>Racing Bulls</td>
+                    <td style="text-align: center;">14/38</td>
+                    <td class="pts">65</td>
+                </tr>
+                <tr class="points">
+                    <td class="pos">10</td>
+                    <td>Pierre Gasly</td>
+                    <td>Alpine</td>
+                    <td style="text-align: center;">18/22</td>
+                    <td class="pts">41</td>
+                </tr>
+                <tr>
+                    <td class="pos">11</td>
+                    <td>Arvid Lindblad</td>
+                    <td>Racing Bulls</td>
+                    <td style="text-align: center;">N/A</td>
+                    <td class="pts">38</td>
+                </tr>
+                <tr>
+                    <td class="pos">12</td>
+                    <td>Franco Colapinto</td>
+                    <td>Alpine</td>
+                    <td style="text-align: center;">20/0</td>
+                    <td class="pts">27</td>
+                </tr>
+                <tr>
+                    <td class="pos">13</td>
+                    <td>Oliver Bearman</td>
+                    <td>Haas</td>
+                    <td style="text-align: center;">13/41</td>
+                    <td class="pts">20</td>
+                </tr>
+                <tr>
+                    <td class="pos">14</td>
+                    <td>Gabriel Bortoleto</td>
+                    <td>Audi</td>
+                    <td style="text-align: center;">19/19</td>
+                    <td class="pts">10</td>
+                </tr>
+                <tr>
+                    <td class="pos">15</td>
+                    <td>Nico Hülkenberg</td>
+                    <td>Audi</td>
+                    <td style="text-align: center;">11/51</td>
+                    <td class="pts">7</td>
+                </tr>
+                <tr>
+                    <td class="pos">16</td>
+                    <td>Esteban Ocon</td>
+                    <td>Haas</td>
+                    <td style="text-align: center;">15/38</td>
+                    <td class="pts">7</td>
+                </tr>
+                <tr>
+                    <td class="pos">17</td>
+                    <td>Fernando Alonso</td>
+                    <td>Aston Martin</td>
+                    <td style="text-align: center;">10/56</td>
+                    <td class="pts">7</td>
+                </tr>
+                <tr>
+                    <td class="pos">18</td>
+                    <td>Carlos Sainz Jr.</td>
+                    <td>Williams</td>
+                    <td style="text-align: center;">9/64</td>
+                    <td class="pts">7</td>
+                </tr>
+                <tr>
+                    <td class="pos">19</td>
+                    <td>Alexander Albon</td>
+                    <td>Williams</td>
+                    <td style="text-align: center;">8/73</td>
+                    <td class="pts">5</td>
+                </tr>
+                <tr>
+                    <td class="pos">20</td>
+                    <td>Yuki Tsunoda</td>
+                    <td>Racing Bulls</td>
+                    <td style="text-align: center;">17/33</td>
+                    <td class="pts">1</td>
+                </tr>
+                <tr >
+                    <td class="pos">21</td>
+                    <td>Lance Stroll</td>
+                    <td>Aston Martin</td>
+                    <td style="text-align: center;">16/33</td>
+                    <td class="pts">0</td>
+                </tr>
+                <tr>
+                    <td class="pos">22</td>
+                    <td>Valtteri Bottas</td>
+                    <td>Cadillac</td>
+                    <td style="text-align: center;">N/A</td>
+                    <td class="pts">0</td>
+                </tr>
+                <tr>
+                    <td class="pos">23</td>
+                    <td>Sergio Perez</td>
+                    <td>Cadillac</td>
+                    <td style="text-align: center;">N/A</td>
+                    <td class="pts">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+            
+    </main>
+
+    <article>
+
+    </article>
+    
+</body>
+</html>
