@@ -447,43 +447,43 @@ details[open] .tresc-artykulu {
 }
 
 .zmieniajacy-obrazek {
-    background-image: url('mclaren.jpg');
+    background-image: url('photos/mclaren.jpg');
 }
 
 .zmieniajacy-obrazek:hover,
 .blog-karta:hover .zmieniajacy-obrazek,
 .blog-karta:focus-visible .zmieniajacy-obrazek {
-    background-image: url('kierowcy\ mclaren.jpg');
+    background-image: url('photos/kierowcy_mclaren.jpg');
 }
 
 .mercedes {
-    background-image: url('mercedes.jpg');
+    background-image: url('photos/mercedes.jpg');
 }
 
 .mercedes:hover,
 .blog-karta:hover .mercedes,
 .blog-karta:focus-visible .mercedes {
-    background-image: url('kimi.jpg');
+    background-image: url('photos/kimi.jpg');
 }
 
 .ferrari {
-    background-image: url('feerraarrii.jpg');
+    background-image: url('photos/feerraarrii.jpg');
 }
 
 .ferrari:hover,
 .blog-karta:hover .ferrari,
 .blog-karta:focus-visible .ferrari {
-    background-image: url('hamilton.jpg');
+    background-image: url('photos/hamilton.jpg');
 }
 
 .redbull {
-    background-image: url('red\ bull.jpg');
+    background-image: url('photos/red_bull.jpg');
 }
 
 .redbull:hover,
 .blog-karta:hover .redbull,
 .blog-karta:focus-visible .redbull {
-    background-image: url('max.jpg');
+    background-image: url('photos/max.jpg');
 }
 
 .tekst-do-obrazka {
