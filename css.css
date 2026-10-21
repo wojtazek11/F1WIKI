@@ -46,8 +46,6 @@ h1 {
     font-size: clamp(1.35rem, 3vw, 1.75rem);
 }
 
-
-/* ---------- Baner na górze section, aside ---------- */
 body > section {
     grid-column: 1;
     align-self: center;
@@ -89,14 +87,12 @@ body > aside {
     transition: color 0.2s;
 }
 
-/* pokazuje podstrone na której jesteśmy */
 .link.aktywny {
     text-decoration: underline;
     text-decoration-thickness: 0.08em;
     text-underline-offset: 0.2em;
 }
 
-/* przycisk menu pokazuje się tylko na telefonach */
 .menu-przycisk {
     display: none;
     flex-direction: column;
@@ -122,7 +118,6 @@ body > aside {
     transition: transform 0.3s ease, opacity 0.2s ease;
 }
 
-/* menu po kliknięciu zamienia się w X */
 .menu-przycisk.otwarte span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
 }
@@ -146,8 +141,6 @@ body > aside {
     }
 }
 
-
-/* Powitanie bolidu z tekstem*/
 marquee {
     font-size: clamp(1.6rem, 4vw, 3rem);
     font-weight: bolder;
@@ -161,14 +154,12 @@ marquee {
 }
 
 .bolid {
-    height: 0.9em;           /* bolid rośnie i maleje razem z napisem */
+    height: 0.9em;
     width: auto;
     max-width: none;
     vertical-align: middle;
 }
 
-
-/*  Licznik do najbliższego Grand Prix */
 .timer-container {
     background-color: #111;
     color: #fff;
@@ -212,8 +203,6 @@ marquee {
     color: #ccc;
 }
 
-
-/* Tabela wyników*/
 .h1-wyniki {
     margin: 12px 0;
 }
@@ -252,7 +241,6 @@ marquee {
     background-color: #2a2a35;
 }
 
-/* akcenty dla podium i strefy punktowej */
 .f1-table tr.p1 { background-color: rgba(255, 215, 0, 0.15); font-weight: bold; }
 .f1-table tr.p2 { background-color: rgba(192, 192, 192, 0.12); }
 .f1-table tr.p3 { background-color: rgba(205, 127, 50, 0.12); }
@@ -262,13 +250,10 @@ marquee {
 .pos { font-weight: bold; width: 40px; text-align: center; }
 .pts { font-weight: bold; color: #ffeb3b; text-align: right; }
 
-/* długi / krótki nagłówek kolumny (krótki pokazuje się na telefonie) */
 .tekst-krotki {
     display: none;
 }
 
-
-/* kalendarz */
 .kalendarz-siatka {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));   /* 3 miesiące obok siebie */
@@ -324,8 +309,6 @@ marquee {
     background-color: crimson;
 }
 
-
-/* aktualności*/
 .beton {
     color: rgb(220, 65, 91);
     text-align: center;
@@ -340,7 +323,6 @@ marquee {
     font-size: clamp(1rem, 2.4vw, 1.5rem);
 }
 
-/* rozwijane artykuły */
 .artykul-kontener {
     max-width: 600px;
     margin: 20px auto;
@@ -352,28 +334,25 @@ marquee {
     background: #ffffff;
 }
 
-/* Styl nagłówka */
 summary {
     position: relative;
     padding: 20px 55px 20px 20px;
     font-size: clamp(1.05rem, 2.5vw, 1.4rem);
     font-weight: bold;
     cursor: pointer;
-    list-style: none;                 /* Ukrywa domyślny trójkącik */
+    list-style: none;
     background-color: #f9f9f9;
     transition: background-color 0.3s ease;
 }
 
 summary::-webkit-details-marker {
-    display: none;                    /* to samo dla Safari (iPhone) */
+    display: none;
 }
 
-/* efekt najechania myszką na tytuł */
 summary:hover {
     background-color: #f0f0f0;
 }
 
-/* własny wskaźnik plus/minus */
 summary::after {
     content: '+';
     position: absolute;
@@ -388,7 +367,6 @@ details[open] summary::after {
     content: '−';
 }
 
-/* animacja płynnego odsłaniania tekstu */
 .tresc-artykulu {
     padding: 0 20px 20px 20px;
     line-height: 1.6;
@@ -412,7 +390,6 @@ details[open] .tresc-artykulu {
     margin-top: 0.8em;
 }
 
-/* zdjęcie w artykule */
 .toor {
     float: right;
     height: 250px;
@@ -421,14 +398,23 @@ details[open] .tresc-artykulu {
     margin: 0.8em 0 10px 15px;
 }
 
-
-/* blog i wpisy*/
 .blog-karta {
     display: flex;
     max-width: 800px;
     min-height: 200px;
     margin: 20px auto;
     border: 4px dashed black;
+    background-color: #fff;
+    color: #111;
+    text-decoration: none;
+}
+
+.blog-karta:hover{
+    display: flex;
+    max-width: 800px;
+    min-height: 200px;
+    margin: 20px auto;
+    border: solid red;
     background-color: #fff;
     color: #111;
     text-decoration: none;
