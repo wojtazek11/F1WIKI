@@ -423,13 +423,24 @@ details[open] .tresc-artykulu {
 .zmieniajacy-obrazek,
 .mercedes,
 .ferrari,
-.redbull {
+.redbull,
+.banana {
     flex: 0 0 300px;
     min-height: 200px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: background-image 0.3s ease-in-out;
+}
+
+.banana {
+    background-image: url('photos/ferrari_bolid_2026.jpg');
+}
+
+.banana:hover,
+.blog-karta:hover .banana,
+.blog-karta:focus-visible .banana {
+    background-image: url('photos/charles.jpg');
 }
 
 .zmieniajacy-obrazek {
