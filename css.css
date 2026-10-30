@@ -5,18 +5,15 @@
 }
 
 html {
-    -webkit-text-size-adjust: 100%;   /* telefon nie powiększa sam tekstu po obróceniu ekranu */
+    -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
 
 body {
     font-family: Arial, sans-serif;
-    max-width: 1640px;                /* na bardzo szerokich monitorach strona nie rozjeżdża się */
+    max-width: 1640px;
     margin: 0 auto;
     padding: 20px;
-
-    /* Układ strony: logo (section) i menu (aside) obok siebie,
-       a wszystko pod nimi (hr, pasek z bolidem, main, article) na całą szerokość */
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
     column-gap: 20px;
@@ -256,7 +253,7 @@ marquee {
 
 .kalendarz-siatka {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));   /* 3 miesiące obok siebie */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 32px;
     align-items: start;
     width: 100%;
@@ -503,8 +500,6 @@ details[open] .tresc-artykulu {
     color: red;
 }
 
-
-/* Lando Norris*/
 .h1-norris {
     max-width: 900px;
     margin: 20px auto 15px;
@@ -522,14 +517,11 @@ details[open] .tresc-artykulu {
     line-height: 1.45;
 }
 
-
-/* Kimi Antonelli */
 .kontener-glowny {
     display: flex;
     width: 100%;
 }
 
-/* boczne zdjęcia */
 .zdjecie-boczne {
     display: block;
     width: 20%;
@@ -538,7 +530,6 @@ details[open] .tresc-artykulu {
     object-position: center top;
 }
 
-/* teskt na środku */
 .sekcja-tresci {
     width: 60%;
     background-color: #c0392b;
@@ -568,14 +559,12 @@ details[open] .tresc-artykulu {
 }
 
 
-/* szerokość ekranu do 1100px */
 @media (max-width: 1100px) {
-    /* kalendarz: 2 miesiące w rzędzie */
+
     .kalendarz-siatka {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    /* ostatni miesiąc, jeśli został sam w rzędzie – na środek */
     .kalendarz-siatka .kal-1:last-child:nth-child(even) {
         grid-column: 1 / -1;
         justify-self: center;
@@ -584,9 +573,8 @@ details[open] .tresc-artykulu {
 }
 
 
-/* szerokość ekranu do 900px */
 @media (max-width: 900px) {
-    /* blog Kimi dwa zdjęcia na górze, tekst na dole */
+
     .kontener-glowny {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -620,14 +608,12 @@ details[open] .tresc-artykulu {
 }
 
 
-/* szerokość ekranu do 700px */
 @media (max-width: 700px) {
     body {
         grid-template-columns: minmax(0, 1fr);
         padding: 10px 12px;
     }
 
-    /* nagłówek: logo po lewej, przycisk menu po prawej, menu pod spodem */
     body > section,
     body > aside {
         grid-column: 1;
@@ -645,7 +631,6 @@ details[open] .tresc-artykulu {
         display: flex;
     }
 
-    /* menu: linki jeden pod drugim */
     body > aside {
         flex-direction: column;
         flex-wrap: nowrap;
@@ -670,7 +655,6 @@ details[open] .tresc-artykulu {
         border-left: 5px solid red;
     }
 
-    /* menu jest schowane dopóki nie klikniesz */
     html.js body > aside {
         max-height: 0;
         overflow: hidden;
@@ -690,7 +674,6 @@ details[open] .tresc-artykulu {
         letter-spacing: 1px;
     }
 
-    /* rozwinięcie menu, 4 kafelki */
     .timer-container {
         padding: 15px 10px;
     }
@@ -711,7 +694,6 @@ details[open] .tresc-artykulu {
         font-size: 1.6rem;
     }
 
-    /* tabele wyników, zwężenie ich */
     .f1-table {
         font-size: 12px;
     }
@@ -738,7 +720,6 @@ details[open] .tresc-artykulu {
         display: inline;
     }
 
-    /* kalendarz: jeden miesiąc pod drugim */
     .kalendarz-siatka {
         grid-template-columns: minmax(0, 1fr);
         max-width: 460px;
@@ -751,7 +732,6 @@ details[open] .tresc-artykulu {
         width: 100%;
     }
 
-    /* aktualności */
     .beton {
         padding-top: 12px;
     }
@@ -781,7 +761,6 @@ details[open] .tresc-artykulu {
         margin: 12px auto 4px;
     }
 
-    /* blog: zdjęcie nad tytułem wpisu */
     .blog-karta {
         flex-direction: column;
         min-height: 0;
@@ -806,7 +785,6 @@ details[open] .tresc-artykulu {
         font-size: 1rem;
     }
 
-    /* wpis o Norrisie */
     .h1-norris {
         margin: 15px auto 12px;
         letter-spacing: 0.5px;
@@ -817,7 +795,6 @@ details[open] .tresc-artykulu {
         text-align: left;
     }
 
-    /* wpis o Kimim */
     .sekcja-tresci {
         padding: 24px 16px;
     }
@@ -828,7 +805,6 @@ details[open] .tresc-artykulu {
 }
 
 
-/* szerokość ekranu do 420px */
 @media (max-width: 420px) {
     body {
         padding: 8px 10px;
@@ -862,7 +838,6 @@ details[open] .tresc-artykulu {
 }
 
 
-/* kafelek z autorami */
 .autorzy {
     width: 100%;
     max-width: 400px;

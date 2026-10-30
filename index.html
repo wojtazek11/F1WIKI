@@ -12,7 +12,6 @@
 
     <section>
         <a href="index.html" class="logo"><img src="photos/logo_f1_wiki.png" alt="F1 WIKI"></a>
-        <!-- przycisk menu na smartfonach -->
         <button class="menu-przycisk" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="menu">
             <span></span><span></span><span></span>
         </button>
@@ -221,8 +220,8 @@
     </div>
     </article>
     <script>
-  // Ustaw datę i godzinę startu wyścigu (rok, miesiąc - 1, dzień, godzina, minuta)
-  // Miesiące w JavaScript liczone są od 0 (styczeń = 0, grudzień = 11)
+  // data (rok, miesiąc - 1, dzień, godzina, minuta)
+  // styczeń = 0, grudzień = 11
   const raceDate = new Date(2026, 9, 25, 21, 0, 0).getTime(); 
 
   const timer = setInterval(function() {
